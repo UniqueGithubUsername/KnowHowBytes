@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+  <!-- Base CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'main/base.css' %}">
+
+  <!-- Load an icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.png' %}"/>
+
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <div class="khb-nav" id="khb-nav">
+    <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/khb-logo2.png' %}"></a>
+    {% block nav %}{% endblock %}
+  </div>
+
+  <div class="khb-content-nav">
+    {% block contentnav %}{% endblock %}
+  </div>
+
+  <div class="khb-content">
+    {% block content %}{% endblock %}
+  </div>
+
+  <div class="khb-footer">
+    Support us with a donation <a class="current" href="#">here</a>
+  </div>
+
+  <div class="khb-footer">
+    <h1>KnowHowBytes</h1>
+    <div class="row">
+      <div class="col m">
+        <p>About us</p>
+        <p><a class="w2" href="#">Know How Bytes</a></p>
+        <p><a class="w2" href="#">Authors</a></p>
+        <p><a class="w2" href="#">Contact</a></p>
+      </div>
+      <div class="col m">
+        <p>Socials</p>
+        <p><a class="w2" href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></p>
+        <p><a class="w2" href="#"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a></p>
+        <p><a class="w2" href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

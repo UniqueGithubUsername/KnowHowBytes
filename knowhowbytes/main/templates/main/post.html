@@ -1,0 +1,38 @@
+{% extends "main/base.html" %}
+
+{% block nav %}
+{% for category in categories %}
+<a href="{% url 'category' category.slug %}">{{category}}</a>
+{% endfor %}
+{% endblock %}
+
+{% block contentnav %}
+<p><a href="{% url 'home' %}">Home</a></p>
+<p>|</p>
+<p><a href="{% url 'category' category.slug %}">{{category}}</a></p>
+<p>|</p>
+<p><a class="current" href="{% url 'post' post.category.slug post.slug %}">{{post.title}}</a></p>
+{% endblock %}
+
+{% block content %}
+<div class="khb-post">
+	<h6 class="w2">{{post.author}} @ {{post.date}}</h6>
+	<h1>{{post.title}}</h1>
+	<img class="khb-post-img" src="{{ post.img.url }}">
+	<div class="w2">{{post.desc|linebreaks}}</div>
+	<h3>{{post.section|linebreaks}}</h3>
+	<div class="w2">{{post.body|linebreaks}}</div>
+	{% if post.section1 != None %}
+	<h3>{{post.section1|linebreaks}}</h3>
+	<div class="w2">{{post.body1|linebreaks}}</div>
+	{% endif %}
+	{% if post.section2 != None %}
+	<h3>{{post.section2|linebreaks}}</h3>
+	<div class="w2">{{post.body2|linebreaks}}</div>
+	{% endif %}
+	{% if post.section3 != None %}
+	<h3>{{post.section3|linebreaks}}</h3>
+	<div class="w2">{{post.body3|linebreaks}}</div>
+	{% endif %}
+</div>
+{% endblock %}
