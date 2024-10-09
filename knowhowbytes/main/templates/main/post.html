@@ -16,7 +16,7 @@
 
 {% block content %}
 <div class="khb-post">
-	<h6 class="w2">{{post.author}} @ {{post.date}}</h6>
+	<p class="w2">{{post.author}} @ {{post.date}}</p>
 	<h1>{{post.title}}</h1>
 	<img class="khb-post-img" src="{{ post.img.url }}">
 	<div class="w2">{{post.desc|linebreaks}}</div>

@@ -1,7 +1,7 @@
 /* color scheme */
 :root {
-  --background: #000;
-  --background2: #212121;
+  --background: #FFF;
+  --background2: #f1f1f1;
   --border: #e5e5e5;
   --border1: #767676;
 
@@ -21,7 +21,7 @@
 
   --black: #000;
   --black1: #222;
-  --black2: #333;
+  --black2: #444;
   --black3: #666;
 }
 
@@ -29,7 +29,7 @@
 
 html {
   font-family: fantasy, Arial, sans-serif;
-  color: white;
+  font-size: 18px;
 }
 
 a {
@@ -40,8 +40,32 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.4rem;
+}
+
 .w2 {
-  color: var(--white2);
+  color: var(--black2);
 }
 
 /* NAVIGATION */
@@ -49,17 +73,17 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 16px;
   background-color: var(--background);
   overflow: hidden;
-  border-bottom: 1px solid var(--black3);
+  border-bottom: 1px solid var(--white2);
 }
 
 .khb-nav a {
   float: left;
   display: block;
-  color: var(--white1);
+  color: var(--black);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 0.8rem;
 }
 
 .khb-nav a:hover {
@@ -79,12 +103,12 @@ h1, h2, h3, h4, h5, h6 {
 .khb-content-nav {
   background-color: var(--background);
   padding: 0 15%;
-  font-size: 9px;
-  border-bottom: 1px solid var(--black3);
+  font-size: 0.7rem;
+  border-bottom: 1px solid var(--white2);
 }
 
 .khb-content-nav a, .khb-content-nav p {
-  color: var(--white1);
+  color: var(--black2);
   display: inline-block;
 }
 
@@ -103,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 4px;
 	text-align: left;
 	padding: 32px;
-	background-color: var(--background);
+	background-color: var(--background2);
 	margin-bottom: 32px;
 }
 
@@ -130,7 +154,6 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 8px 16px;
 	background-color: var(--primary);
 	color: #fff;
-	font-size: 13px;
 }
 
 /* Cards */
@@ -138,6 +161,10 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   background-color: var(--background);
   margin: 16px;
+}
+
+.khb-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .khb-card-upper {
@@ -157,8 +184,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .khb-card-title {
   padding: 8px;
-  font-size: 15px;
-  color: var(--white);
+  font-size: 1.2rem;
+  color: var(--black);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -166,8 +193,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .khb-card-desc {
   padding: 8px;
-  font-size: 15px;
-  color: var(--white2);
+  font-size: 0.8rem;
+  color: var(--black2);
 }
 
 /* Footer */
