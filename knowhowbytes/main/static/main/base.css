@@ -2,7 +2,7 @@
 :root {
   --background: #FFF;
   --background2: #f1f1f1;
-  --border: #e5e5e5;
+  --border: #484848;
   --border1: #767676;
 
   --primary: #00d8a2;
@@ -73,7 +73,7 @@ h6 {
   padding: 0 16px;
   background-color: var(--background);
   overflow: hidden;
-  border-bottom: 1px solid var(--white2);
+  border-bottom: 1px solid var(--border);
 }
 
 .khb-nav a {
@@ -104,7 +104,7 @@ h6 {
   background-color: var(--background);
   padding: 0 15%;
   font-size: 0.7rem;
-  border-bottom: 1px solid var(--white2);
+  border-bottom: 1px solid var(--border);
 }
 
 .khb-content-nav a, .khb-content-nav p {
@@ -200,7 +200,7 @@ h6 {
 /* Footer */
 .khb-footer {
   padding: 32px 15%;
-  border-top: 1px solid var(--black2);
+  border-top: 1px solid var(--border);
   background-color: var(--background);
 }
 

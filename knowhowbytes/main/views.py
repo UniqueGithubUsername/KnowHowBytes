@@ -21,3 +21,9 @@ def post(request, slug1, slug2):
 	post = Post.objects.get(slug=slug2)
 	context = {'categories':categories,'category':category,'post':post}
 	return render(request, 'main/post.html', context)
+
+def about(request):
+	authors = Author.objects.all()
+	categories = Category.objects.all()
+	context = {'authors':authors, 'categories':categories}
+	return render(request, 'main/about.html', context)

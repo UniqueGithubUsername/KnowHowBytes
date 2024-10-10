@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="khb-nav" id="khb-nav">
-    <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/khb-logo.png' %}"></a>
+    <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/logo.png' %}"></a>
     {% block nav %}{% endblock %}
   </div>
 
@@ -36,7 +36,7 @@
     <div class="row">
       <div class="col m">
         <p>About us</p>
-        <p><a class="w2" href="#">Know How Bytes</a></p>
+        <p><a class="w2" href="{% url 'about' %}">Know How Bytes</a></p>
         <p><a class="w2" href="#">Authors</a></p>
         <p><a class="w2" href="#">Contact</a></p>
       </div>

@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+
+{% block nav %}
+{% for category in categories %}
+<a href="{% url 'category' category.slug %}">{{category}}</a>
+{% endfor %}
+{% endblock %}
+
+{% block contentnav %}
+<p><a href="{% url 'home' %}">Home</a></p>
+<p>|</p>
+<p><a class="current" href="{% url 'about' %}">About us</a></p>
+{% endblock %}
+
+{% block content %}
+<div class="khb-post">
+</div>
+{% endblock %}
