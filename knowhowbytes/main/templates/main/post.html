@@ -20,19 +20,42 @@
 	<h1>{{post.title}}</h1>
 	<img class="khb-post-img" src="{{ post.img.url }}">
 	<div class="w2">{{post.desc|linebreaks}}</div>
-	<h3>{{post.section|linebreaks}}</h3>
-	<div class="w2">{{post.body|linebreaks}}</div>
-	{% if post.section1 != None %}
-	<h3>{{post.section1|linebreaks}}</h3>
-	<div class="w2">{{post.body1|linebreaks}}</div>
+	<h3>Contents</h3>
+	{% for section in post_sections %}
+	{% if forloop.counter0|divisibleby:2 %}
+	<a class="w2" href="#{{section}}">{{section|linebreaks}}</a>
 	{% endif %}
-	{% if post.section2 != None %}
-	<h3>{{post.section2|linebreaks}}</h3>
-	<div class="w2">{{post.body2|linebreaks}}</div>
+	{% endfor%}
+
+
+	{% for section in post_sections %}
+	{% if forloop.counter0|divisibleby:2 %}
+	<h3 id="{{section}}">{{section}}</h3>
+	{% else %}
+	<div class="w2">{{section|linebreaks}}</div>
 	{% endif %}
-	{% if post.section3 != None %}
-	<h3>{{post.section3|linebreaks}}</h3>
-	<div class="w2">{{post.body3|linebreaks}}</div>
-	{% endif %}
+	{% endfor%}
+</div>
+{% endblock %}
+
+{% block content2 %}
+<h3>Other posts in {{category}}</h3>
+<div class="row">
+{% for post in posts %}
+<div class="col s">
+<a href="{% url 'post' post.category.slug post.slug %}">
+<div class="khb-card">
+	<div class="khb-card-upper">
+		<img class="khb-card-img" src="{{ post.img.url }}">
+	</div>
+	<div class="khb-card-lower">
+		<div class="khb-card-desc w2">{{post.date}}</div>
+		<div class="khb-card-title">{{post.title}}</div>
+		<div class="khb-card-desc w2">{{post.desc}}</div>
+	</div>
+</div>
+</a>
+</div>
+{% endfor %}
 </div>
 {% endblock %}

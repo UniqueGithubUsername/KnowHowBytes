@@ -164,7 +164,9 @@ h6 {
 }
 
 .khb-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  .khb-card-img {
+    opacity: 0.8;
+  }
 }
 
 .khb-card-upper {

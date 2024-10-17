@@ -18,8 +18,10 @@ def category(request, slug):
 def post(request, slug1, slug2):
 	categories = Category.objects.all()
 	category = Category.objects.get(slug=slug1)
+	posts = Post.objects.filter(category=category)
 	post = Post.objects.get(slug=slug2)
-	context = {'categories':categories,'category':category,'post':post}
+	post_sections = post.get_sections()
+	context = {'categories':categories,'category':category,'posts':posts,'post':post,'post_sections':post_sections}
 	return render(request, 'main/post.html', context)
 
 def about(request):
