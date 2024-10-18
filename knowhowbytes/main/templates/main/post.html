@@ -1,13 +1,9 @@
 {% extends "main/base.html" %}
 
-{% block nav %}
-{% for category in categories %}
-<a href="{% url 'category' category.slug %}">{{category}}</a>
-{% endfor %}
-{% endblock %}
-
 {% block contentnav %}
 <p><a href="{% url 'home' %}">Home</a></p>
+<p>|</p>
+<p><a href="{% url 'blog' %}">Blog</a></p>
 <p>|</p>
 <p><a href="{% url 'category' category.slug %}">{{category}}</a></p>
 <p>|</p>
@@ -23,7 +19,7 @@
 	<h3>Contents</h3>
 	{% for section in post_sections %}
 	{% if forloop.counter0|divisibleby:2 %}
-	<a class="w2" href="#{{section}}">{{section|linebreaks}}</a>
+	<h4><a class="w2" href="#{{section}}">{{section|linebreaks}}</a></h4>
 	{% endif %}
 	{% endfor%}
 
@@ -39,6 +35,7 @@
 {% endblock %}
 
 {% block content2 %}
+<div class="khb-footer">
 <h3>Other posts in {{category}}</h3>
 <div class="row">
 {% for post in posts %}
@@ -57,5 +54,6 @@
 </a>
 </div>
 {% endfor %}
+</div>
 </div>
 {% endblock %}

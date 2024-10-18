@@ -8,20 +8,24 @@ def home(request):
 	context = {'authors':authors, 'categories':categories}
 	return render(request, 'main/home.html', context)
 
-def category(request, slug):
+def blog(request):
 	categories = Category.objects.all()
+	posts = Post.objects.all()
+	context = {'categories':categories,'posts':posts}
+	return render(request, 'main/blog.html', context)
+
+def category(request, slug):
 	category = Category.objects.get(slug=slug)
 	posts = Post.objects.filter(category=category)
-	context = {'categories':categories,'category':category,'posts':posts}
+	context = {'category':category,'posts':posts}
 	return render(request, 'main/category.html', context)
 
 def post(request, slug1, slug2):
-	categories = Category.objects.all()
 	category = Category.objects.get(slug=slug1)
-	posts = Post.objects.filter(category=category)
 	post = Post.objects.get(slug=slug2)
+	posts = Post.objects.filter(category=category).exclude(id=post.id)
 	post_sections = post.get_sections()
-	context = {'categories':categories,'category':category,'posts':posts,'post':post,'post_sections':post_sections}
+	context = {'category':category,'posts':posts,'post':post,'post_sections':post_sections}
 	return render(request, 'main/post.html', context)
 
 def about(request):

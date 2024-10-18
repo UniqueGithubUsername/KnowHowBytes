@@ -1,11 +1,5 @@
 {% extends "main/base.html" %}
 
-{% block nav %}
-{% for category in categories %}
-<a href="{% url 'category' category.slug %}">{{category}}</a>
-{% endfor %}
-{% endblock %}
-
 {% block contentnav %}
 <p><a href="{% url 'home' %}">Home</a></p>
 <p>|</p>
@@ -13,6 +7,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="khb-post">
-</div>
+<h2>We are</h2>
+<h1 class="current">KnowHowBytes</h1>
+<p class="w2">Our goal is to rule the world lol</p>
+<h3 id="authors">Authors</h3>
+{% for author in authors %}
+<p class="w2">{{author.name}}</p>
+{% endfor %}
+<h3 id="contact">Contact</h3>
+<a class="khb-link" href="#">Contact us</a>
 {% endblock %}

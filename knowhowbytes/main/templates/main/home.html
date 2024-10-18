@@ -1,20 +1,16 @@
 {% extends "main/base.html" %}
+{% load static %}
 
 {% block title %}KNOW HOW BYTES™{% endblock %}
-
-{% block nav %}
-{% for category in categories %}
-<a href="{% url 'category' category.slug %}">{{category}}</a>
-{% endfor %}
-{% endblock %}
 
 {% block contentnav %}
 <p><a class="current" href="{% url 'home' %}">Home</a></p>
 {% endblock %}
 
 {% block content %}
-<h2>Welcome to</h2>
-<h1>KnowHowBytes</h1>
+<h2 class="w2">Welcome to</h2>
+<h1>Know<span class="w2">How</span><span class="current">Bytes</span></h1>
+<h3><a class="khb-link" href="{% url 'blog' %}">Go to blog</a></h3>
 <h3 class="current">Categories</h3>
 {% for category in categories %}
 <div class="khb-sticker">

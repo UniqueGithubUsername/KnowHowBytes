@@ -70,7 +70,7 @@ h6 {
 
 /* NAVIGATION */
 .khb-nav {
-  padding: 0 16px;
+  padding: 0 15%;
   background-color: var(--background);
   overflow: hidden;
   border-bottom: 1px solid var(--border);
@@ -153,7 +153,7 @@ h6 {
 	border-radius: 4px;
 	padding: 8px 16px;
 	background-color: var(--primary);
-	color: #fff;
+	color: #000;
 }
 
 /* Cards */
