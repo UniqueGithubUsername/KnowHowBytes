@@ -9,14 +9,14 @@
 {% endblock %}
 
 {% block content %}
-<h3>Categories</h3>
+<br>
 {% for category in categories %}
 <a class="khb-link" href="{% url 'category' category.slug %}">{{category}}</a>
 {% endfor %}
 
-<h3>All posts</h3>
 {% for category in categories %}
-<h4>{{category}}</h4>
+<h3>{{category.name}}</h3>
+<p class="w2">{{category.desc}}</p>
 <div class="row">
 {% for post in posts %}
 {% if post.category == category %}
