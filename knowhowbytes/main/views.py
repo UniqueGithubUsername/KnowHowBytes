@@ -4,6 +4,7 @@ from .models import Author, Category, Post
 # Create your views here.
 def home(request):
 	authors = Author.objects.all()
+	print(authors)
 	categories = Category.objects.all()
 	context = {'authors':authors, 'categories':categories}
 	return render(request, 'main/home.html', context)

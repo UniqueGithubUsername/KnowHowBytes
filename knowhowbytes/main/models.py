@@ -33,10 +33,12 @@ class Post(models.Model):
 	postnext = models.ForeignKey("self", on_delete=models.SET_NULL, blank=True, null=True, related_name="next")
 
 	def get_sections(self):
-		sections = self.body.split("\r\n")
-		print(sections)
+		sections = self.body.split("\r\n\r\n\r\n")
+		return sections
 
-		return self.body.split("\r\n\r\n")
+	def get(section):
+		print(section[0])
+		return section
 
 	def __str__(self):
 		return self.title

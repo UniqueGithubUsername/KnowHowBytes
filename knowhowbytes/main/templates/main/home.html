@@ -8,7 +8,22 @@
 {% endblock %}
 
 {% block content %}
+<h2 class="w2">Welcome to</h2>
 <h1>Know<span class="w2">How</span><span class="current">Bytes™</span></h1>
+<p>Here you will find posts about Software Development, etc...</p>
+<h3>The Team</h3>
+{% for author in authors %}
+<div class="row">
+	<div class="col m">
+		<img class="khb-img" src="{{ author.img.url }}">
+	</div>
+	<div class="col m">
+		<h5>{{author.name}}</h5>
+		<p>{{author.desc}}</p>
+	</div>
+</div>
+{% endfor %}
+
 <h3>Categories</h3>
 {% for category in categories %}
 <div class="khb-sticker">

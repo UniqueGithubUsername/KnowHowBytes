@@ -18,17 +18,24 @@
 	<div class="w2">{{post.desc|linebreaks}}</div>
 	<h3>Contents</h3>
 	{% for section in post_sections %}
-	{% if forloop.counter0|divisibleby:2 %}
-	<h4><a class="w2" href="#{{section}}">{{section|linebreaks}}</a></h4>
+
+	{% if '#' in section %}
+	<!-- CONTENTS -->
+	<h4><a class="w2" href="#{{section}}">{{section|slice:'1:'}}</a></h4>
 	{% endif %}
+
 	{% endfor%}
-
-
+	<br>
 	{% for section in post_sections %}
-	{% if forloop.counter0|divisibleby:2 %}
-	<h3 id="{{section}}">{{section}}</h3>
+	{% if '#' in section %}
+	<!-- HEADER -->
+	<h3 id="{{section}}">{{section|slice:'1:'}}</h3>
+	{% elif '&' in section %}
+	<!-- CODE -->
+	<div class="w2 khb-post-code">{{section|slice:'1:'|linebreaks}}</div>
 	{% else %}
-	<div class="w2">{{section|linebreaks}}</div>
+	<!-- NORMAL TEXT -->
+	<div class="w2">{{section|slice:'1:'|linebreaks}}</div>
 	{% endif %}
 	{% endfor%}
 </div>

@@ -156,6 +156,13 @@ h6 {
   border-radius: 8px;
 }
 
+.khb-post-code {
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 8px 16px;
+  background-color: var(--background2);
+}
+
 .khb-link {
 	border-radius: 4px;
 	padding: 8px 16px;
