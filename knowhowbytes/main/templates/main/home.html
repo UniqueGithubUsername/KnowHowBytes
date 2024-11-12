@@ -7,36 +7,25 @@
 <p><a class="current" href="{% url 'home' %}">Home</a></p>
 {% endblock %}
 
-{% block content %}
-<h2 class="w2">Welcome to</h2>
-<h1>Know<span class="w2">How</span><span class="current">Bytes™</span></h1>
-<p>Here you will find posts about Software Development, etc...</p>
-<h3>The Team</h3>
-{% for author in authors %}
-<div class="row">
-	<div class="col m">
-		<img class="khb-img" src="{{ author.img.url }}">
-	</div>
-	<div class="col m">
-		<h5>{{author.name}}</h5>
-		<p>{{author.desc}}</p>
-	</div>
+{% block fullsize %}
+<div class="fullsize">
+	<h2 class="w2">Welcome to</h2>
+	<h1>Know<span class="w2">How</span><span class="current">Bytes™</span></h1>
+	<p>Explore and discover our world.</p>
+	<br>
+	<p><a class="khb-link" href="{% url 'blog' %}">See posts</a></p>	
 </div>
-{% endfor %}
 
-<h3>Categories</h3>
 {% for category in categories %}
 <div class="khb-sticker">
-	<div class="row">
-		<div class="col s">
-			<h3><img class="khb-img" src="{{ category.img.url }}"></h3>
-		</div>
-		<div class="col l">
-			<h3 class="w2">{{category.name}}</h3>
-			<h5>{{category.desc}}</h5>
-			<a class="khb-link" href="{% url 'category' category.slug %}">See posts</a>
-		</div>
-	</div>
+	<img class="s" src="{{ category.img.url }}">
+	<h3>{{category.name}}</h3>
+	<p class="w2">{{category.desc}}</p>
+	<br>
+	<a class="khb-link" href="{% url 'category' category.slug %}">See posts</a>
 </div>
 {% endfor %}
+{% endblock %}
+
+{% block content %}
 {% endblock %}

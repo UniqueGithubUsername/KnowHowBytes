@@ -1,8 +1,8 @@
 /* color scheme */
 :root {
-  --background: #FFF;
-  --background2: #f1f1f1;
-  --border: #484848;
+  --background: #030303;
+  --background2: #131313;
+  --border: #333333;
   --border1: #767676;
 
   --primary: #00d8a2;
@@ -15,7 +15,7 @@
 
   --white: #FFF;
   --white1: #f2f2f2;
-  --white2: #a2a2a2;
+  --white2: #d2d2d2;
   --white3: #868686;
   --white4: #d0d0d0;
 
@@ -29,7 +29,8 @@
 
 html {
   font-family: Roboto, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
+  color: white;
 }
 
 a {
@@ -64,12 +65,16 @@ h6 {
 }
 
 .w2 {
+  color: var(--white2);
+}
+
+.b2 {
   color: var(--black2);
 }
 
 /* NAVIGATION */
 .khb-nav {
-  padding: 0 15%;
+  padding: 0 16px;
   background-color: var(--background);
   overflow: hidden;
   border-bottom: 1px solid var(--border);
@@ -78,7 +83,7 @@ h6 {
 .khb-nav a {
   float: left;
   display: block;
-  color: var(--black);
+  color: var(--white);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -115,12 +120,20 @@ h6 {
 }
 
 .khb-content-nav a, .khb-content-nav p {
-  color: var(--black2);
+  color: var(--white);
   display: inline-block;
 }
 
 .current {
   color: var(--primary) !important;
+}
+
+/* Fullsize content */
+.fullsize {
+  padding: 15%;
+  background-image: url("/static/main/mountain.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Main content */
@@ -131,11 +144,10 @@ h6 {
 }
 
 .khb-sticker {
-	border-radius: 4px;
-	text-align: left;
-	padding: 32px;
-	background-color: var(--background2);
-	margin-bottom: 32px;
+	text-align: center;
+	padding: 64px 32px;
+  color: white;
+	background-color: var(--background);
 }
 
 .khb-img {
@@ -164,10 +176,15 @@ h6 {
 }
 
 .khb-link {
-	border-radius: 4px;
+  font-weight: bolder;
+	border-radius: 16px;
 	padding: 8px 16px;
-	background-color: var(--primary);
-	color: #000;
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.khb-link:hover {
+  background-color: var(--white3);
 }
 
 /* Cards */
@@ -201,14 +218,14 @@ h6 {
 .khb-card-title {
   padding: 8px;
   font-size: 1.2rem;
-  color: var(--black);
+  color: var(--white);
   font-weight: bold;
 }
 
 .khb-card-desc {
   padding: 8px;
   font-size: 0.8rem;
-  color: var(--black2);
+  color: var(--white2);
 }
 
 /* Footer */
