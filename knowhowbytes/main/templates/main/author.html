@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+
+{% block title %}KNOW HOW BYTES™ | {{author.name}}{% endblock %}
+
+{% block contentnav %}
+<p><a href="{% url 'home' %}">Home</a></p>
+<p>|</p>
+<p><a href="{% url 'blog' %}">Blog</a></p>
+<p>|</p>
+<p><a class="current" href="{% url 'author' author.slug %}">{{author.name}}</a></p>
+{% endblock %}
+
+{% block content %}
+<div class="khb-sticker">
+	<img class="khb-img" src="{{ author.img.url }}">
+	<h3>{{author.name}}</h3>
+	<p class="w2">{{author.desc}}</p>
+</div>
+{% endblock %}

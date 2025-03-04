@@ -20,8 +20,11 @@
 </head>
 <body>
   <div class="khb-nav" id="khb-nav">
-    <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/khb-logo2.png' %}"></a>
+    <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/khb-logo.png' %}"></a>
     <a href="{% url 'blog' %}">Blog</a>
+    <a href="javascript:void(0);" class="icon" onclick="drop()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
 
   <div class="khb-content-nav">
@@ -44,13 +47,13 @@
   <div class="khb-footer">
     <h1>Know<span class="w2">How</span><span class="current">Bytes™</span></h1>
     <div class="row">
-      <div class="col m">
+      <div class="col m-fix">
         <h6>About us</h6>
         <p><a class="w2" href="{% url 'about' %}">Know How Bytes</a></p>
         <p><a class="w2" href="{% url 'about' %}#authors">Authors</a></p>
         <p><a class="w2" href="{% url 'about' %}#contact">Contact</a></p>
       </div>
-      <div class="col m">
+      <div class="col m-fix">
         <h6>Socials</h6>
         <p><a class="w2" href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></p>
         <p><a class="w2" href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i> Youtube</a></p>
@@ -59,5 +62,17 @@
       </div>
     </div>
   </div>
+
+<script>
+function drop() {
+  var x = document.getElementById("khb-nav");
+  if (x.className === "khb-nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "khb-nav";
+  }
+}
+</script>
+
 </body>
 </html>

@@ -34,3 +34,9 @@ def about(request):
 	categories = Category.objects.all()
 	context = {'authors':authors, 'categories':categories}
 	return render(request, 'main/about.html', context)
+
+def author(request, slug):
+	author = Author.objects.get(slug=slug)
+	posts = Post.objects.filter(author=author)
+	context = {'author':author,'posts':posts}
+	return render(request, 'main/author.html', context)
