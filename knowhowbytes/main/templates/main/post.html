@@ -14,10 +14,11 @@
 <div class="khb-post">
 	
 	<h1>{{post.title}}</h1>
+	<a class="khb-link" href="{% url 'category' post.category.slug %}">{{post.category}}</a>
 	<a class="khb-link" href="{% url 'author' post.author.slug %}">{{post.author}} @ {{post.date}}</a>
 	<img class="khb-post-img" src="{{ post.img.url }}">
 	<div class="w2">{{post.desc|linebreaks}}</div>
-	<div class="khb-card">
+	<div class="khb-post-content">
 	<h3>Contents</h3>
 	{% for section in post_sections %}
 	{% if '#' in section %}

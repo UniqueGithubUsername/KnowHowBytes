@@ -15,15 +15,30 @@
 	<p><a class="khb-link" href="{% url 'blog' %}">See posts</a></p>	
 </div>
 
-{% for category in categories %}
 <div class="khb-sticker">
-	<img class="s" src="{{ category.img.url }}">
-	<h3>{{category.name}}</h3>
-	<p class="w2">{{category.desc}}</p>
-	<br>
-	<a class="khb-link" href="{% url 'category' category.slug %}">See posts</a>
+	<h2>Discover our blog</h2>
+	<p class="w2">Browse our categories or <a class="current" href="{% url 'blog' %}">see all posts</a></p>
+</div>
+
+<div class="khb-sticker">
+	<div class="row">
+{% for category in categories %}
+<div class="col m">
+	<a href="{% url 'category' category.slug %}">
+		<div class="khb-card">
+			<div class="khb-card-upper">
+				<img class="khb-card-img" src="{{ category.img.url }}">
+			</div>
+			<div class="khb-card-lower">
+				<div class="khb-card-title">{{category.name}}</div>
+				<div class="khb-card-desc w2">{{category.desc}}</div>
+			</div>
+		</div>
+	</a>
 </div>
 {% endfor %}
+</div>
+</div>
 {% endblock %}
 
 {% block content %}

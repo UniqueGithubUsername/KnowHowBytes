@@ -12,8 +12,14 @@
 
 {% block content %}
 <div class="khb-sticker">
-	<img class="khb-img" src="{{ author.img.url }}">
-	<h3>{{author.name}}</h3>
-	<p class="w2">{{author.desc}}</p>
+<div class="row">
+	<div class="col m">
+		<img class="khb-img" src="{{ author.img.url }}">
+	</div>
+	<div class="col m">
+		<h3>{{author.name}}</h3>
+		<p class="w2">{{author.desc}}</p>
+	</div>
+</div>
 </div>
 {% endblock %}
