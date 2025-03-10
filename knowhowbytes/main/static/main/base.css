@@ -2,7 +2,7 @@
 :root {
   --background: #030405;
   --background2: #232425;
-  --border: #333333;
+  --border: #d3d5d7;
   --border1: #767676;
 
   --primaryx: #00d8a2;
@@ -31,7 +31,6 @@
 html {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
-  color: white;
 }
 
 body {
@@ -70,11 +69,11 @@ h6 {
 }
 
 .w2 {
-  color: var(--white2);
+  color: var(--black2);
 }
 
 .b2 {
-  color: var(--black2);
+  color: var(--white2);
 }
 
 .primary {
@@ -83,24 +82,30 @@ h6 {
 
 /* NAVIGATION */
 .khb-nav {
-  padding: 0 15%;
-  background-color: var(--primary2);
+  padding: 8px 15%;
+  background-color: var(--background);
   overflow: hidden;
 }
 
 .khb-nav a {
   float: left;
   display: block;
-  color: var(--black1);
+  color: var(--white);
   text-align: center;
-  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.khb-nav-link {
+  padding: 24px;
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: bold;
 }
 
 .khb-nav a:hover {
-  color: var(--black);
+  color: var(--primary2);
 }
 
 .khb-nav a.active {
@@ -121,7 +126,7 @@ h6 {
 }
 
 .nav-logo {
-	height: 16px;
+	height: 64px;
 }
 
 /* content nav */
@@ -155,14 +160,14 @@ h6 {
 .khb-content {
 	text-align: left;
 	padding: 64px 15%;
-	background-color: var(--background);
+	background-color: var(--white);
 }
 
 .khb-sticker {
 	text-align: center;
 	padding: 64px 15%;
-  color: white;
-	background-color: var(--background);
+  color: var(--black);
+	background-color: var(--white);
 }
 
 .khb-img {
@@ -194,8 +199,8 @@ h6 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.9rem;
   padding: 8px 16px;
-  background-color: var(--white);
-  color: var(--black1);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .khb-post-code-pre {
@@ -220,20 +225,19 @@ h6 {
   font-size: 12px;
   border-radius: 8px;
   padding: 8px 16px;
-  background-color: var(--black1);
-  color: var(--primary2);
+  background-color: var(--primary2);
+  color: var(--black1);
 }
 
 .khb-link:hover {
-  color: var(--black1);
-  background-color: var(--primary2);
+  color: var(--primary2);
+  background-color: var(--black1);
 }
 
 /* Cards */
 .khb-card {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--background);
   margin: 16px;
   border: 1px solid var(--border);
 }
@@ -264,21 +268,20 @@ h6 {
 .khb-card-title {
   padding: 8px;
   font-size: 1.2rem;
-  color: var(--white);
+  color: var(--black);
   font-weight: bold;
 }
 
 .khb-card-desc {
   padding: 8px;
   font-size: 0.8rem;
-  color: var(--white2);
+  color: var(--black2);
 }
 
 /* Footer */
 .khb-footer {
   padding: 32px 15%;
-  border-top: 1px solid var(--border);
-  background-color: var(--background);
+  background-color: var(--white1);
 }
 
 .khb-footer a:hover {
@@ -322,7 +325,7 @@ h6 {
 
 @media screen and (max-width: 1400px) {
   .khb-nav {
-    padding: 0 16px;
+    padding: 4px 16px;
   }
   .khb-content-nav {
     padding: 0 16px;

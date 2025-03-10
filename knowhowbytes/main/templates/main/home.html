@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block fullsize %}
+<!--
 <div class="fullsize">
 	<h2 class="w2">Welcome to</h2>
 	<h1>Know<span class="w2">How</span><span class="current">Bytes™</span></h1>
@@ -14,8 +15,10 @@
 	<br>
 	<p><a class="khb-link" href="{% url 'blog' %}">See posts</a></p>	
 </div>
+-->
 
 <div class="khb-sticker">
+	<a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/logo.png' %}"></a>
 	<h2>Discover our blog</h2>
 	<p class="w2">Browse our categories or <a class="current" href="{% url 'blog' %}">see all posts</a></p>
 </div>
@@ -31,7 +34,7 @@
 			</div>
 			<div class="khb-card-lower">
 				<div class="khb-card-title">{{category.name}}</div>
-				<div class="khb-card-desc w2">{{category.desc}}</div>
+				<div class="khb-card-desc">{{category.desc}}</div>
 			</div>
 		</div>
 	</a>

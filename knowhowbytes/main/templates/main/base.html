@@ -20,11 +20,8 @@
 </head>
 <body>
   <div class="khb-nav" id="khb-nav">
-    <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/khb-logo.png' %}"></a>
-    <a href="{% url 'blog' %}">Blog</a>
-    <a href="javascript:void(0);" class="icon" onclick="drop()">
-      <i class="fa fa-bars"></i>
-    </a>
+    <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/logo.png' %}"></a>
+    <a class="khb-nav-link" href="{% url 'blog' %}">Blog</a>
   </div>
 
   <div class="khb-content-nav">
@@ -40,9 +37,16 @@
   {% block content2 %}{% endblock %}
 
   <div class="khb-footer">
-    <h1>Know<span class="w2">How</span><span class="current">Bytes™</span></h1>
-    <h3>Support us...</h3>
-    <p>... and donate <a class="current" href="#">here</a></p>
+    <div class="row">
+      <div class="col m-fix">
+        <h3>KnowHowBytes</h3>
+        <a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/logo.png' %}"></a>
+      </div>
+      <div class="col m-fix">
+        <h3>Support us...</h3>
+        <p>... and donate <a class="current" href="#">here</a></p>
+      </div>
+    </div>
     <div class="row">
       <div class="col m-fix">
         <h6>About us</h6>
