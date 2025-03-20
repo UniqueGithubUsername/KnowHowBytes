@@ -17,13 +17,27 @@
 </div>
 -->
 
-<div class="khb-sticker">
+<div class="khb-content">
 	<a href="{% url 'home' %}"><img class="nav-logo" src="{% static 'main/logo.png' %}"></a>
-	<h2>Discover our blog</h2>
-	<p class="w2">Browse our categories or <a class="current" href="{% url 'blog' %}">see all posts</a></p>
+	<div class="row">
+		<h1>Welcome</h1>
+		<div class="col m">
+			<p>Hi, my name is Lukas Lenz</p>
+			<p>I am a Software Developer working at RWTH Aachen University in the Institute of Automation of Complex Power Systems (ACS)</p>
+			<p>I like doing sports, being outside, spending time with friends, programming, drinking coffee, making coffee, eating and sleeping.</p>
+			<p>I studied Scientific programming for my bachelor and Technomathematik for my master. My key interests in programming are Machine Learning, Image and Video processing, website development and styling.</p>
+			<p>The programming language i like and use the most is defenitly python, but i also do know C, C++, Java, VBA, GO and more...</p>
+			<p>My plan for this website is to note down all the small things that have helped me and share it with you. It might help you aswell.</p>
+
+		</div>
+		<div class="col m">
+
+		</div>
+	</div>
 </div>
 
 <div class="khb-sticker">
+	<h3 class="w2">Categories</h3>
 	<div class="row">
 {% for category in categories %}
 <div class="col m">
@@ -41,6 +55,7 @@
 </div>
 {% endfor %}
 </div>
+<p><a class="khb-link" href="{% url 'blog' %}">See all posts</a></p>
 </div>
 {% endblock %}
 
