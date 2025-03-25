@@ -83,7 +83,7 @@ h6 {
 /* NAVIGATION */
 .khb-nav {
   padding: 8px 15%;
-  background-color: var(--background);
+  background-color: var(--black);
   overflow: hidden;
 }
 
@@ -131,7 +131,7 @@ h6 {
 
 /* content nav */
 .khb-content-nav {
-  background-color: var(--background2);
+  background-color: var(--black);
   padding: 0 15%;
   font-size: 0.7rem;
 }

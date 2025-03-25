@@ -9,20 +9,15 @@
 {% endblock %}
 
 {% block content %}
-<h1>The Blog</h1>
-<p class="w2">Just browse around and start reading! You will find a lot of different topics, so feel free to choose a category in case you are only interested in a specific category.</p>
-<br>
 <a class="khb-link2" href="{% url 'blog' %}">All</a>
 {% for category in categories %}
 <a class="khb-link" href="{% url 'category' category.slug %}">{{category}}</a>
 {% endfor %}
 
-{% for category in categories %}
-<h3>{{category.name}}</h3>
-<p class="w2">{{category.desc}}</p>
+<h3>All</h3>
+<p class="w2">All posts sorted by newest</p>
 <div class="row">
 {% for post in posts %}
-{% if post.category == category %}
 <div class="col s">
 <a href="{% url 'post' post.category.slug post.slug %}">
 <div class="khb-card">
@@ -37,8 +32,6 @@
 </div>
 </a>
 </div>
-{% endif %}
 {% endfor %}
 </div>
-{% endfor %}
 {% endblock %}

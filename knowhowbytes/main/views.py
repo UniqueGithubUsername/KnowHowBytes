@@ -16,9 +16,10 @@ def blog(request):
 	return render(request, 'main/blog.html', context)
 
 def category(request, slug):
+	categories = Category.objects.all()
 	category = Category.objects.get(slug=slug)
 	posts = Post.objects.filter(category=category)
-	context = {'category':category,'posts':posts}
+	context = {'category':category,'posts':posts,'categories':categories}
 	return render(request, 'main/category.html', context)
 
 def post(request, slug1, slug2):

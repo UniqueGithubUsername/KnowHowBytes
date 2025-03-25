@@ -11,6 +11,15 @@
 {% endblock %}
 
 {% block content %}
+<a class="khb-link" href="{% url 'blog' %}">All</a>
+{% for cat in categories %}
+{% if cat == category %}
+<a class="khb-link2" href="{% url 'category' cat.slug %}">{{cat}}</a>
+{% else %}
+<a class="khb-link" href="{% url 'category' cat.slug %}">{{cat}}</a>
+{% endif %}
+{% endfor %}
+
 <h3>{{category.name}}</h3>
 <p class="w2">{{category.desc}}</p>
 <div class="row">
